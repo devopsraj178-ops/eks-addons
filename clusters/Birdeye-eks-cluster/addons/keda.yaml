@@ -1,0 +1,125 @@
+# ============================================================
+# KEDA - Birdeye EKS Cluster
+# Chart Version: 2.20.2
+#
+# Only commonly changed cluster-specific settings are listed.
+# Uncomment/change a setting only when required.
+# All other settings use the upstream KEDA chart defaults.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# OPERATOR
+# ------------------------------------------------------------
+
+# operator:
+#   replicaCount: 1
+
+
+# ------------------------------------------------------------
+# KEDA METRICS SERVER
+# ------------------------------------------------------------
+
+# metricsServer:
+#   enabled: true
+#   replicaCount: 1
+
+
+# ------------------------------------------------------------
+# ADMISSION WEBHOOKS
+# ------------------------------------------------------------
+
+# webhooks:
+#   enabled: true
+#   replicaCount: 1
+#   failurePolicy: Ignore
+
+
+# ------------------------------------------------------------
+# RESOURCES
+# ------------------------------------------------------------
+#
+# KEDA has separate resources for:
+#   - operator
+#   - metrics API server
+#   - admission webhooks
+#
+# resources:
+#   operator:
+#     requests:
+#       cpu: 100m
+#       memory: 100Mi
+#     limits:
+#       cpu: 1
+#       memory: 1000Mi
+#
+#   metricServer:
+#     requests:
+#       cpu: 100m
+#       memory: 100Mi
+#     limits:
+#       cpu: 1
+#       memory: 1000Mi
+#
+#   webhooks:
+#     requests:
+#       cpu: 100m
+#       memory: 100Mi
+#     limits:
+#       cpu: 1
+#       memory: 1000Mi
+
+
+# ------------------------------------------------------------
+# NODE PLACEMENT
+# ------------------------------------------------------------
+
+# nodeSelector:
+#   kubernetes.io/os: linux
+
+# tolerations: []
+
+# affinity: {}
+
+
+# ------------------------------------------------------------
+# POD DISRUPTION BUDGET
+# ------------------------------------------------------------
+
+# Enable only when running multiple replicas.
+#
+# podDisruptionBudget:
+#   operator:
+#     minAvailable: 1
+#
+#   metricServer:
+#     minAvailable: 1
+#
+#   webhooks:
+#     minAvailable: 1
+
+
+# ------------------------------------------------------------
+# PROMETHEUS
+# ------------------------------------------------------------
+#
+# Enable these only if Prometheus Operator monitoring is being
+# used in the cluster.
+#
+# prometheus:
+#   metricServer:
+#     enabled: true
+#     serviceMonitor:
+#       enabled: true
+#
+#   operator:
+#     enabled: true
+#     serviceMonitor:
+#       enabled: true
+
+
+# ------------------------------------------------------------
+# PRIORITY CLASS
+# ------------------------------------------------------------
+
+# priorityClassName: ""
