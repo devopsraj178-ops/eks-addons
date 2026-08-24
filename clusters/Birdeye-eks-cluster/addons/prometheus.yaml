@@ -1,0 +1,15 @@
+# ============================================================
+# Prometheus - Birdeye EKS
+# Chart Version: 29.27.0
+# App Version: v3.14.0
+# ============================================================
+
+server:
+  persistentVolume:
+    enabled: false
+
+alertmanager:
+  enabled: false
+
+pushgateway:
+  enabled: false
