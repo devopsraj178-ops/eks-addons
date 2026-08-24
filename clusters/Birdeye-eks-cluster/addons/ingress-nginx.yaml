@@ -1,0 +1,111 @@
+# ============================================================
+# Ingress NGINX - Birdeye EKS Cluster
+# Chart Version: 4.15.1
+# App Version:   1.15.1
+#
+# Uncomment/change only when required.
+# All other settings use the upstream chart defaults.
+# ============================================================
+
+
+# ============================================================
+# CONTROLLER
+# ============================================================
+
+# ------------------------------------------------------------
+# REPLICAS
+# ------------------------------------------------------------
+
+# controller:
+#   replicaCount: 1
+
+
+# ------------------------------------------------------------
+# RESOURCES
+# ------------------------------------------------------------
+
+# controller:
+#   resources:
+#     requests:
+#       cpu: 100m
+#       memory: 90Mi
+#     limits:
+#       cpu: 500m
+#       memory: 500Mi
+
+
+# ------------------------------------------------------------
+# SERVICE / LOAD BALANCER
+# ------------------------------------------------------------
+
+# The upstream default is LoadBalancer.
+
+# controller:
+#   service:
+#     type: LoadBalancer
+
+# AWS Load Balancer configuration, if required later:
+#
+# controller:
+#   service:
+#     annotations:
+#       service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+
+# Preserve source IP when required:
+#
+# controller:
+#   service:
+#     externalTrafficPolicy: Local
+
+
+# ------------------------------------------------------------
+# INGRESS CLASS
+# ------------------------------------------------------------
+
+# controller:
+#   ingressClassResource:
+#     name: nginx
+#     enabled: true
+
+# Set true if nginx should be the default IngressClass:
+#
+# controller:
+#   ingressClassResource:
+#     default: true
+
+
+# ------------------------------------------------------------
+# NGINX CONFIGURATION
+# ------------------------------------------------------------
+
+# Common application requirements:
+#
+# controller:
+#   config:
+#     proxy-body-size: "50m"
+#     proxy-read-timeout: "300"
+#     proxy-send-timeout: "300"
+
+
+# ------------------------------------------------------------
+# NODE PLACEMENT
+# ------------------------------------------------------------
+
+# controller:
+#   nodeSelector:
+#     kubernetes.io/os: linux
+
+# controller:
+#   tolerations: []
+
+# controller:
+#   affinity: {}
+
+
+# ------------------------------------------------------------
+# METRICS
+# ------------------------------------------------------------
+
+# controller:
+#   metrics:
+#     enabled: false
