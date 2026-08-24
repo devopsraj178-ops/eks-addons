@@ -18,6 +18,11 @@ loki:
 singleBinary:
   replicas: 1
 
+  persistence:
+    enabled: true
+    storageClass: gp3
+    size: 10Gi
+
 read:
   replicas: 0
 
