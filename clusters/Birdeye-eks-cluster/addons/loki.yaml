@@ -15,6 +15,15 @@ loki:
       ruler: ruler
       admin: admin
 
+  chunksCache:
+    enabled: true
+    resources:
+      requests:
+        cpu: 100m
+        memory: 1Gi
+      limits:
+        memory: 2Gi
+
 singleBinary:
   replicas: 1
 
