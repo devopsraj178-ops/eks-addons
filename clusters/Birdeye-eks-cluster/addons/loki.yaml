@@ -18,6 +18,7 @@ loki:
   chunksCache:
     enabled: true
     allocatedMemory: 1024
+    allocatedCPU: 100m
     resources:
       requests:
         cpu: 100m
