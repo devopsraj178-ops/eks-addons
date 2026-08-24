@@ -1,0 +1,114 @@
+# ============================================================
+# Grafana - Birdeye EKS Cluster
+# Chart Version: 10.5.15
+# ============================================================
+
+# ------------------------------------------------------------
+# REPLICAS
+# ------------------------------------------------------------
+
+# replicas: 1
+
+
+# ------------------------------------------------------------
+# RESOURCES
+# ------------------------------------------------------------
+
+# resources:
+#   requests:
+#     cpu: 100m
+#     memory: 256Mi
+#   limits:
+#     cpu: 500m
+#     memory: 512Mi
+
+
+# ------------------------------------------------------------
+# SERVICE
+# ------------------------------------------------------------
+
+service:
+  type: ClusterIP
+
+# For external access, change to LoadBalancer:
+#
+# service:
+#   type: LoadBalancer
+
+
+# ------------------------------------------------------------
+# INGRESS
+# ------------------------------------------------------------
+
+# ingress:
+#   enabled: true
+#   ingressClassName: nginx
+#   hosts:
+#     - grafana.example.com
+#   tls:
+#     - secretName: grafana-tls
+#       hosts:
+#         - grafana.example.com
+
+
+# ------------------------------------------------------------
+# PERSISTENCE
+# ------------------------------------------------------------
+
+# persistence:
+#   enabled: true
+#   type: pvc
+#   storageClassName: gp3
+#   accessModes:
+#     - ReadWriteOnce
+#   size: 10Gi
+
+
+# ------------------------------------------------------------
+# ADMIN PASSWORD
+# ------------------------------------------------------------
+#
+# Do NOT put the actual password in Git.
+#
+# adminPassword: change-me
+
+
+# ------------------------------------------------------------
+# DATASOURCE
+# ------------------------------------------------------------
+
+# datasources:
+#   datasources.yaml:
+#     apiVersion: 1
+#     datasources:
+#       - name: Prometheus
+#         type: prometheus
+#         access: proxy
+#         url: http://kube-prometheus-stack-prometheus.monitoring.svc:9090
+#         isDefault: true
+
+
+# ------------------------------------------------------------
+# NODE PLACEMENT
+# ------------------------------------------------------------
+
+# nodeSelector:
+#   kubernetes.io/os: linux
+
+# tolerations: []
+
+# affinity: {}
+
+
+# ------------------------------------------------------------
+# RESOURCES / SECURITY
+# ------------------------------------------------------------
+
+# securityContext:
+#   runAsNonRoot: true
+
+# containerSecurityContext:
+#   allowPrivilegeEscalation: false
+#   capabilities:
+#     drop:
+#       - ALL
