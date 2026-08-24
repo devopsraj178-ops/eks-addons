@@ -1,0 +1,28 @@
+# ============================================================
+# Grafana Loki - Birdeye EKS
+# Chart Version: 7.3.0
+# ============================================================
+
+deploymentMode: SingleBinary
+
+loki:
+  auth_enabled: false
+  useTestSchema: true
+
+  storage:
+    bucketNames:
+      chunks: chunks
+      ruler: ruler
+      admin: admin
+
+singleBinary:
+  replicas: 1
+
+read:
+  replicas: 0
+
+write:
+  replicas: 0
+
+backend:
+  replicas: 0

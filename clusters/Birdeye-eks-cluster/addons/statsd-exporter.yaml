@@ -1,0 +1,21 @@
+# ============================================================
+# Prometheus StatsD Exporter - Birdeye EKS
+# Chart Version: 1.0.0
+# ============================================================
+
+service:
+  type: ClusterIP
+
+# Common resource settings
+# resources:
+#   requests:
+#     cpu: 50m
+#     memory: 64Mi
+#   limits:
+#     cpu: 200m
+#     memory: 256Mi
+
+# Enable Prometheus ServiceMonitor when required.
+#
+# serviceMonitor:
+#   enabled: true
