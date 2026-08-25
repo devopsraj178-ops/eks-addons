@@ -42,6 +42,11 @@ spec:
             valueFile: clusters/cluster_1/addons/tempo.yaml
             namespace: tempo
 
+          - name: kubecost
+            path: charts/kubecost
+            valueFile: clusters/cluster_1/addons/kubecost.yaml
+            namespace: kubecost
+
           - name: aws-load-balancer-controller
             path: charts/aws-alb-controller
             valueFile: clusters/cluster_1/addons/aws-alb-controller.yaml
