@@ -5,26 +5,13 @@
 
 clusterName: Birdeye-eks-cluster
 
-# AWS region
 region: us-east-1
 
-# Set the IAM/IRSA service account after IAM role creation.
 serviceAccount:
-  create: true
+  create: false
   name: aws-load-balancer-controller
 
-# Run controller on Linux nodes
 nodeSelector:
   kubernetes.io/os: linux
 
-# Common production setting
 replicaCount: 2
-
-# Optional resource tuning
-# resources:
-#   requests:
-#     cpu: 100m
-#     memory: 128Mi
-#   limits:
-#     cpu: 500m
-#     memory: 512Mi
