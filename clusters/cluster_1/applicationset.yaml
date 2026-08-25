@@ -8,43 +8,43 @@ spec:
     - list:
         elements:
           - name: grafana
-            path: addons/grafana
-            valueFile: clusters/Birdeye-eks-cluster/addons/grafana.yaml
+            path: charts/grafana
+            valueFile: clusters/cluster_1/charts/grafana.yaml
             namespace: monitoring
 
           - name: ingress-nginx
-            path: addons/ingress-nginx
-            valueFile: clusters/Birdeye-eks-cluster/addons/ingress-nginx.yaml
+            path: charts/ingress-nginx
+            valueFile: clusters/cluster_1/charts/ingress-nginx.yaml
             namespace: ingress-nginx
 
           - name: keda
-            path: addons/keda
-            valueFile: clusters/Birdeye-eks-cluster/addons/keda.yaml
+            path: charts/keda
+            valueFile: clusters/cluster_1/charts/keda.yaml
             namespace: keda
 
           - name: loki
-            path: addons/loki
-            valueFile: clusters/Birdeye-eks-cluster/addons/loki.yaml
+            path: charts/loki
+            valueFile: clusters/cluster_1/charts/loki.yaml
             namespace: loki
 
           - name: prometheus
-            path: addons/prometheus
-            valueFile: clusters/Birdeye-eks-cluster/addons/prometheus.yaml
+            path: charts/prometheus
+            valueFile: clusters/cluster_1/charts/prometheus.yaml
             namespace: monitoring
 
           - name: statsd-exporter
-            path: addons/statsd-exporter
-            valueFile: clusters/Birdeye-eks-cluster/addons/statsd-exporter.yaml
+            path: charts/statsd-exporter
+            valueFile: clusters/cluster_1/charts/statsd-exporter.yaml
             namespace: monitoring
 
           - name: tempo
-            path: addons/tempo
-            valueFile: clusters/Birdeye-eks-cluster/addons/tempo.yaml
+            path: charts/tempo
+            valueFile: clusters/cluster_1/charts/tempo.yaml
             namespace: tempo
 
           - name: aws-load-balancer-controller
-            path: addons/aws-alb-controller
-            valueFile: clusters/Birdeye-eks-cluster/addons/aws-alb-controller.yaml
+            path: charts/aws-alb-controller
+            valueFile: clusters/cluster_1/charts/aws-alb-controller.yaml
             namespace: kube-system
 
   template:
