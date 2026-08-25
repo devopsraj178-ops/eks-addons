@@ -9,42 +9,42 @@ spec:
         elements:
           - name: grafana
             path: addons/grafana
-            values: clusters/Birdeye-eks-cluster/addons/grafana.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/grafana.yaml
             namespace: monitoring
 
           - name: ingress-nginx
             path: addons/ingress-nginx
-            values: clusters/Birdeye-eks-cluster/addons/ingress-nginx.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/ingress-nginx.yaml
             namespace: ingress-nginx
 
           - name: keda
             path: addons/keda
-            values: clusters/Birdeye-eks-cluster/addons/keda.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/keda.yaml
             namespace: keda
 
           - name: loki
             path: addons/loki
-            values: clusters/Birdeye-eks-cluster/addons/loki.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/loki.yaml
             namespace: loki
 
           - name: prometheus
-            path: addons/kube-prometheus-stack
-            values: clusters/Birdeye-eks-cluster/addons/kube-prometheus-stack.yaml
+            path: addons/prometheus
+            valueFile: clusters/Birdeye-eks-cluster/addons/prometheus.yaml
             namespace: monitoring
 
           - name: statsd-exporter
             path: addons/statsd-exporter
-            values: clusters/Birdeye-eks-cluster/addons/statsd-exporter.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/statsd-exporter.yaml
             namespace: monitoring
 
           - name: tempo
             path: addons/tempo
-            values: clusters/Birdeye-eks-cluster/addons/tempo.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/tempo.yaml
             namespace: tempo
 
           - name: aws-load-balancer-controller
             path: addons/aws-alb-controller
-            values: clusters/Birdeye-eks-cluster/addons/aws-alb-controller.yaml
+            valueFile: clusters/Birdeye-eks-cluster/addons/aws-alb-controller.yaml
             namespace: kube-system
 
   template:
@@ -59,7 +59,7 @@ spec:
         path: '{{path}}'
         helm:
           valueFiles:
-            - '../../{{values}}'
+            - '../../{{valueFile}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
