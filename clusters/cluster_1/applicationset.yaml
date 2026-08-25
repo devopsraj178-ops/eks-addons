@@ -9,42 +9,42 @@ spec:
         elements:
           - name: grafana
             path: charts/grafana
-            valueFile: clusters/cluster_1/charts/grafana.yaml
+            valueFile: clusters/cluster_1/addons/grafana.yaml
             namespace: monitoring
 
           - name: ingress-nginx
             path: charts/ingress-nginx
-            valueFile: clusters/cluster_1/charts/ingress-nginx.yaml
+            valueFile: clusters/cluster_1/addons/ingress-nginx.yaml
             namespace: ingress-nginx
 
           - name: keda
             path: charts/keda
-            valueFile: clusters/cluster_1/charts/keda.yaml
+            valueFile: clusters/cluster_1/addons/keda.yaml
             namespace: keda
 
           - name: loki
             path: charts/loki
-            valueFile: clusters/cluster_1/charts/loki.yaml
+            valueFile: clusters/cluster_1/addons/loki.yaml
             namespace: loki
 
           - name: prometheus
             path: charts/prometheus
-            valueFile: clusters/cluster_1/charts/prometheus.yaml
+            valueFile: clusters/cluster_1/addons/prometheus.yaml
             namespace: monitoring
 
           - name: statsd-exporter
             path: charts/statsd-exporter
-            valueFile: clusters/cluster_1/charts/statsd-exporter.yaml
+            valueFile: clusters/cluster_1/addons/statsd-exporter.yaml
             namespace: monitoring
 
           - name: tempo
             path: charts/tempo
-            valueFile: clusters/cluster_1/charts/tempo.yaml
+            valueFile: clusters/cluster_1/addons/tempo.yaml
             namespace: tempo
 
           - name: aws-load-balancer-controller
             path: charts/aws-alb-controller
-            valueFile: clusters/cluster_1/charts/aws-alb-controller.yaml
+            valueFile: clusters/cluster_1/addons/aws-alb-controller.yaml
             namespace: kube-system
 
   template:
